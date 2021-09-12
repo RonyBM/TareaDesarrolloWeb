@@ -36,7 +36,7 @@ public class ProveedoresPdfView extends AbstractPdfView {
 		com.lowagie.text.Font fuenteTitulo = FontFactory.getFont("Helvetica",16,Color.BLACK);
 		
 		
-		celda=  new PdfPCell(new Phrase("Listado Generación de clientes", fuenteTitulo ));
+		celda=  new PdfPCell(new Phrase("Listado Generación de proveedores", fuenteTitulo ));
 		celda.setBorder(0);
 		celda.setBackgroundColor(new Color(2,251,225));
 		celda.setHorizontalAlignment(Element.ALIGN_CENTER);
