@@ -36,7 +36,7 @@ public class ProveedoresController {
 
 		Proveedores proveedores = proveedoresRepository.findById(id).get();
 		if (proveedores == null) {
-			return "redirect:/listar-clientes";
+			return "redirect:/listar-proveedores";
 		}
 
 		model.addAttribute("titulo", "Detalle Proveedor: " + proveedores.getNombre());
@@ -53,10 +53,10 @@ public class ProveedoresController {
 		Page<Proveedores> proveedores = proveedoresRepository.findAll(pageRequest);
 
 		PageRender<Proveedores> pageRender = new PageRender<Proveedores>("/listar-proveedores", proveedores);
-		model.addAttribute("titulo", "Listado de clientes");
-		model.addAttribute("Proveedores", proveedores);
+		model.addAttribute("titulo", "Listado de proveedores");
+		model.addAttribute("proveedores", proveedores);
 		model.addAttribute("page", pageRender);
-		return "clientes";
+		return "proveedores";
 	}
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -64,7 +64,7 @@ public class ProveedoresController {
 	public String nuevoProveedor(Model model) {
 		Proveedores proveedor = new Proveedores();
 		model.addAttribute("titulo", "Nuevo Provededor");
-		model.addAttribute("cliente", proveedor);
+		model.addAttribute("proveedor", proveedor);
 		return "form-proveedor";
 	}
 
@@ -74,7 +74,7 @@ public class ProveedoresController {
 		if (id > 0) {
 			proveedor = proveedoresRepository.findById(id).get();
 		} else {
-			return "redirect:/listar-clientes";
+			return "redirect:/listar-proveedores";
 		}
 		model.addAttribute("titulo", "Editar Proveedor");
 		model.addAttribute("proveedor", proveedor);
@@ -91,7 +91,7 @@ public class ProveedoresController {
 			return "redirect:/listar-proveedores";
 		}
 
-		return "redirect:/listar-provveedores";
+		return "redirect:/listar-proveedores";
 	}
 
 	@RequestMapping(value = "/nuevo-proveedor", method = RequestMethod.POST)
