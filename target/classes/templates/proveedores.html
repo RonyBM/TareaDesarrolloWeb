@@ -12,9 +12,7 @@
 				<h4 class="card-tittle">
 
 					<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/nuevo-cliente}"
-						class="btn btn-outline-primary btn-xs">Agregar Cliente</a>		
-						<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/nuevo-cliente}"
-						class="btn btn-outline-primary btn-xs">Listar Clientes</a>		
+						class="btn btn-outline-primary btn-xs">Agregar Proveedor</a>
 				</h4>
 				<nav th:replace="paginator-nav :: paginator"></nav>
 				<table class="table table-striped " th:if="${!clientes.isEmpty()}">
