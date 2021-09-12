@@ -13,6 +13,11 @@
 
 					<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/nuevo-cliente}"
 						class="btn btn-outline-primary btn-xs">Agregar Proveedor</a>
+						<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/detalle-cliente-form.pdf}"
+						class="nav-link float-right" title="Exportar a PDF" target="_blank">
+						<img class="img-responsive centerr-box" 
+						th:src="@{/images/pdf.png}" height=100px> 
+						</a>
 				</h4>
 				<nav th:replace="paginator-nav :: paginator"></nav>
 				<table class="table table-striped " th:if="${!clientes.isEmpty()}">

@@ -29,6 +29,15 @@ public class Proveedores extends AbstractEntity implements Serializable {
     private String direccion;
     private String telefono;    
     private String email;
+ private String foto;
+    
+    public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
 
 	public Long getId() {
@@ -71,6 +80,7 @@ public class Proveedores extends AbstractEntity implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
     
     
 
